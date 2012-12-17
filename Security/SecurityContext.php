@@ -95,6 +95,10 @@ class SecurityContext
     public function setDomain($domain)
     {
         $this->domain = $domain;
+        if (null !== $this->authLogic)
+        {
+          $this->authLogic->setDomain($domain);
+        }
     }
 
     /**
